@@ -7,6 +7,8 @@ package dongko.programmers.level1;
  * @link https://programmers.co.kr/learn/courses/30/lessons/12940
  */
 public class Gcd {
+	
+	//유클리드 호제법으로 최대 공약수 구한 후, 공식으로 최소공배수 구함
 	class Solution {
 		public int[] solution(int n, int m) {
 			int gcd = 유클리드(Math.min(n, m), Math.max(n, m));
