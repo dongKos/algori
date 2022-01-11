@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * @title 타겟넘버
- * @author user
+ * @author dhkim
  * @date 2022. 1. 11.
  * @link https://programmers.co.kr/learn/courses/30/lessons/43165
  */
@@ -35,5 +35,27 @@ public class TargetNumber {
 	        }
 	        return answer;
 	    }
+	}
+	
+	class SolutionDfs {
+	    int [] numbers = {};
+	    int target;
+	    int cnt = 0;
+	    public int solution(int[] ns, int t) {
+	        numbers = ns;
+	        target = t;
+	        dfs(0, 0);
+	        return cnt;
+	    }
+	    
+	    public void dfs(int num, int sum) {
+			if(num == numbers.length) {
+				if(sum == target) cnt++;
+				return;
+			} else {
+				dfs(num+1, sum + numbers[num]);
+				dfs(num+1, sum - numbers[num]);
+			}
+		}
 	}
 }
