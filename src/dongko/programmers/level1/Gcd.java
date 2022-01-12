@@ -1,24 +1,24 @@
 package dongko.programmers.level1;
 
 /**
- * @title ÃÖ´ë°ø¾à¼ö¿Í ÃÖ¼Ò°ø¹è¼ö
+ * @title ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ï¿½
  * @author dhkim
  * @date 2022. 1. 6.
  * @link https://programmers.co.kr/learn/courses/30/lessons/12940
  */
 public class Gcd {
 	
-	//À¯Å¬¸®µå È£Á¦¹ýÀ¸·Î ÃÖ´ë °ø¾à¼ö ±¸ÇÑ ÈÄ, °ø½ÄÀ¸·Î ÃÖ¼Ò°ø¹è¼ö ±¸ÇÔ
+	//ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	class Solution {
 		public int[] solution(int n, int m) {
-			int gcd = À¯Å¬¸®µå(Math.min(n, m), Math.max(n, m));
+			int gcd = uc(Math.min(n, m), Math.max(n, m));
 			int[] answer = new int[2];
 			answer[0] = gcd;
 			answer[1] = (n / gcd) * (m / gcd) * gcd;
 			return answer;
 		}
 
-		public int À¯Å¬¸®µå(int min, int max) {
+		public int uc(int min, int max) {
 			int r = 0;
 			while (true) {
 				r = max % min;
