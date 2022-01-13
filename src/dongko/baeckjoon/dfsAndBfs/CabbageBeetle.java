@@ -1,4 +1,4 @@
-package dongko.baeckjoon.dfs;
+package dongko.baeckjoon.dfsAndBfs;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
