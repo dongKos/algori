@@ -1,5 +1,6 @@
 package dongko.inflearn.arrays;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -8,21 +9,22 @@ import java.util.Scanner;
  * @date 2022. 1. 19.
  * @link https://cote.inflearn.com/contest/10/problem/02-04
  */
-public class Fibonachi {
+public class Fibonacci {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		int input1 = in.nextInt();
-		System.out.println(fibo(input1));
+		int N = in.nextInt();
+		ArrayList<Integer> f = new ArrayList<> ();
+		
+		f.add(1);
+		f.add(1);
+		
+		for(int i = 2; i < N; i++) {
+			f.add(f.get(i-1) + f.get(i-2));
+		}
+		
+		for(int num : f) 
+			System.out.print(num + " ");
 		return;
 	}
 	
-	static int fibo(int n) {
-		if (n == 0) {
-			return 0;
-		} else if (n == 1) {
-			return 1;
-		} else {
-			return fibo(n - 2) + fibo(n - 1);
-		}
-	}
 }
