@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /**
  * @title K번째 큰 수
@@ -21,15 +22,19 @@ public class KthLargestNumber_05 {
 			n[i] = in.nextInt();
 		}
 		HashMap<Integer, Integer> map = new HashMap<> ();
+		TreeSet<Integer> tSet = new TreeSet<> (Collections.reverseOrder());
 		for(int i = 0; i < N; i++) 
-			for(int j = 0; j < N; j++) 
-				for(int k = 0; k < N; k++) 
-					if(i != j && i != k && j != k) 
-						map.put(n[i] + n[j] + n[k], 0);
-		
-		ArrayList<Integer> sums = new ArrayList<> (map.keySet());
-		Collections.sort(sums, Collections.reverseOrder());
-		System.out.println((K-1 > sums.size())?-1:sums.get(K-1));
+			for(int j = i+1; j < N; j++) 
+				for(int k = j+1; k < N; k++) 
+					tSet.add(n[i] + n[j] + n[k]);
+		int cnt = 0;
+		int answer = -1;
+		for(int num : tSet)
+			if(++cnt == K) {
+				answer = num;
+				break;
+			}
+		System.out.println(answer);
 		return;
 	}
 }
