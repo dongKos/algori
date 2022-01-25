@@ -13,38 +13,32 @@ public class TempClassCaptain {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int N = in.nextInt();
-		int [][] n = new int [N][N];
+		in.nextLine();
+		int [][] n = new int [N][];
 
 		for(int i = 0; i < N; i++) {
-			for(int j = 0; j < N; j++) {
-				n[i][j] = in.nextInt();
+			String [] s = in.nextLine().split(" ");
+			n[i] = new int[s.length];
+			for(int j = 0; j < s.length; j++) {
+				n[i][j] = Integer.parseInt(s[j]);
 			}
 		}
 		LinkedHashMap<Integer, Integer> map = new LinkedHashMap<> ();
-		for(int i = 0; i < N; i++) {
+		int max = 0;
+		for(int i = 0; i < n.length; i++) {
 			map.put(i, 0);
-			for(int j = 0; j < N; j++) {
+			for(int j = 0; j < n[i].length; j++) {
 				int c = n[i][j];
 				
-				for(int k = 0; k < N; k++) {
-					System.out.println("C : " + c + " n[k][j] : " + n[k][j]);
-					if(c == n[k][j]) {
+				for(int k = 0; k < 5; k++) {
+//					System.out.println("j : " + j + " k : " + k + " c : " + c + " n[k][j] : " + n[k][j]);
+					if(k != i && n[i][k] == n[j][k]) {
 						map.put(i, map.get(i) + 1);
 					}
 				}
-				System.out.println();
+//				System.out.println(map);
 			}
-			System.out.println(map);
-		}
-		System.out.println(map);
-		int max = map.get(0);
-		int sNum = 0;
-		for(int key : map.keySet()) {
-			System.out.println("key : " + key + " val : " + map.get(key));
-			if(max < map.get(key)) {
-				max = map.get(key);
-				sNum = key;
-			}
+			if(max < map.get(i)) max = map.get(i); 
 		}
 		
 		for(int key : map.keySet()) {

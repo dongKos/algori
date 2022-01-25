@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * @title ê´„í˜¸ë¬¸ìì œê±° 
+ * @title °ıÈ£¹®ÀÚÁ¦°Å 
  * @date 2022. 1. 21.
  * @author ibank
  * @link cote.inflearn.com/contest/10/problem/05-02
@@ -13,24 +13,18 @@ public class RemoveBracketWord_02 {
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
 		char [] c = in.next().toCharArray(); 
-		
 		Stack<Character> s = new Stack<> ();
-		s.push(c[0]);
-		for(int i = 1; i < c.length; i++) {
-			if(s.isEmpty()) {
+		String result = "";
+		for(int i = 0; i < c.length; i++) 
+			if(c[i] == '(') 
 				s.push(c[i]);
-			} else {
-				
-				char prv = s.peek();
-				if(prv == ')') {
-					while(s.peek() != '(')
-						s.pop();
-					s.pop();
-				} else 
-					s.push(c[i]);
-			}
-		}
-		System.out.println(s);
+			else if(c[i] == ')') 
+				s.pop();
+			else 
+				if(s.isEmpty()) 
+					result+=c[i];
+		
+		System.out.println(result);
 		return;
 	  }
 }

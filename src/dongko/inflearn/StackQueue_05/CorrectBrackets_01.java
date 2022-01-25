@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * @title 올바른 괄호
+ * @title �ùٸ���ȣ
  * @date 2022. 1. 21.
  * @author ibank
  * @link https://cote.inflearn.com/contest/10/problem/05-01
