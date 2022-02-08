@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @link https://www.inflearn.com/course/자바-알고리즘-문제풀이-코테대비/lecture/73401
  */
 public class GetPermutation_06 {
-
+	
 	static int n, m;
 	static int [] arr, pm, ch;
 	public static void main(String[] args) {
