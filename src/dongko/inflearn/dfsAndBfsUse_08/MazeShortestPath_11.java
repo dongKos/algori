@@ -37,7 +37,7 @@ public class MazeShortestPath_11 {
 		q.offer(new Coordinate(0, 0));
 		bfs(0, 0);
 		
-		System.out.println(dis[6][6]);
+		System.out.println(dis[6][6]==0?-1:dis[6][6]);
 	}
 	static int [] dx = {-1, 0, 1, 0};
 	static int [] dy = {0, 1, 0, -1};
