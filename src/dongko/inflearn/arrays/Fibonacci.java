@@ -1,6 +1,5 @@
 package dongko.inflearn.arrays;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -10,21 +9,24 @@ import java.util.Scanner;
  * @link https://cote.inflearn.com/contest/10/problem/02-04
  */
 public class Fibonacci {
+	//메모이제이션을 이용해서 시간 복잡도를 획기적으로 줄인다
+	static int [] m;
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int N = in.nextInt();
-		ArrayList<Integer> f = new ArrayList<> ();
-		
-		f.add(1);
-		f.add(1);
-		
-		for(int i = 2; i < N; i++) {
-			f.add(f.get(i-1) + f.get(i-2));
+		m = new int [N+1];
+		dfs(N);
+		for(int i = 0; i < N; i++) System.out.print(m[i] + " ");
+		return;
+	}
+	private static int dfs(int n) {
+		if(m[n] > 0) return m[n];
+		if(n == 0) return m[n] = 1;
+		else if (n == 1) return m[n] = 1;
+		else {
+			return m[n] = dfs(n-2) + dfs(n-1);
 		}
 		
-		for(int num : f) 
-			System.out.print(num + " ");
-		return;
 	}
 	
 }
