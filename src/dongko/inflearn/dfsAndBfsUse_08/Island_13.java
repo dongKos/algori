@@ -30,6 +30,7 @@ public class Island_13 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		System.out.println("수정");
+		System.out.println("수정");
 		n = in.nextInt();
 		arr = new int[n][n];
 		ch = new int[n][n];
