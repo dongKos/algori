@@ -1,10 +1,16 @@
-package dongko.baeckjoon;
+package dongko.baeckjoon.inflearnRecommend;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * @title 영역구하기
+ * @author dhkim
+ * @date 2022. 3. 14.
+ * @link https://www.acmicpc.net/problem/2583
+ */
 public class _2583 {
 
 	static int[][] ch;
